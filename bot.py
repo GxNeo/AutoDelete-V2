@@ -33,7 +33,7 @@ Bot = Client(name="auto-delete",
              )
 
 
-@Bot.on_message(filters.command('start') & filters.private)
+@Bot.on_message(filters.command('start') & filters.private & filters.user(ADMINS))
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
 
