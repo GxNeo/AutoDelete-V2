@@ -35,6 +35,7 @@ Bot = Client(name="auto-delete",
 
 @Bot.on_message(filters.command('start') & filters.private & filters.user(ADMINS))
 async def start(bot, message):
+    await message.delete()
     await message.reply(START_MSG.format(message.from_user.mention))
 
 @User.on_message(filters.chat(GROUPS))
