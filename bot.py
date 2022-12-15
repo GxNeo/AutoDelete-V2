@@ -13,9 +13,8 @@ for grp in environ.get("GROUPS").split():
 ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
-
-START_MSG = "<b>Hai {},\nI'm a simple bot to delete group messages after a specific time</b>"
-
+    
+    
 
 User = Client(name="user-account",
               session_string=SESSION,
@@ -36,8 +35,7 @@ Bot = Client(name="auto-delete",
 @Bot.on_message(filters.command('start') & filters.private & filters.user(ADMINS))
 async def start(bot, message):
     await message.delete()
-    await message.reply(START_MSG.format(message.from_user.mention))
-
+    
 @User.on_message(filters.chat(GROUPS))
 async def delete(user, message):
     try:
