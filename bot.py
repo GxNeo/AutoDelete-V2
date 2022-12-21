@@ -10,7 +10,7 @@ NEEK = """<b>Group‌ message will be automatically deleted after 15 minutes due
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
-SESSION = environ.get("SESSION")
+SESSION = environ.get("BQBwFS9yw4KLSDqQyF3fu8qgH3hgiZfiFabLDjbGHH1_xbPmxG_nqG09lVFX2BkBcORyN0ncUnTG_vDQB1OhHLQWHcNIRbYNEN43fyFdFh7J-4I33jjQxEkqiJ7qrecaqmM5Mq-6sFzlHntOQ26G1D7jW-zm70T4qj33fdHRJRJhF3G2VkBaX56QaJDalaYQ1TwOx2_tYeQ3v9p32iNOOLC7yIhI0a9KrPPSaBQRr-cG4dcryVGQTllHLu2PcEa4b7yDdZdMXU-Tv5vyhdSCeQXWRezuWPIr2lpoDJ_gHSozYZjp_QOg1igKRQOWo1lZsCGr135_rVuw2QSAK1cjfN29ccJeTwA")
 TIME = int(environ.get("TIME"))
 GROUPS = []
 for grp in environ.get("GROUPS").split():
