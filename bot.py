@@ -2,6 +2,10 @@ import asyncio
 from os import environ
 from pyrogram import Client, filters, idle
 
+NEEK = """<b>Group‌ message will be automatically deleted after 15 minutes due to copyright issue.</b>
+    
+<b>⚜ Powered by @CinimaBranthen</b>"""
+
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
@@ -35,7 +39,24 @@ Bot = Client(name="auto-delete",
 @Bot.on_message(filters.command('start') & filters.private & filters.user(ADMINS))
 async def start(bot, message):
     await message.delete()
-    
+ 
+@Bot.on_message((filters.private | filters.group) & filters.command('neek'))
+async def start(client, message):
+    await message.reply_text(
+        text=NEEK,
+        disable_web_page_preview=True,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("How to Deploy?", url="https://youtu.be/hkmc3e7U7R4"),
+                    InlineKeyboardButton("About Me", callback_data="about_data")
+                ]
+                
+            ],
+        ),
+        reply_to_message_id=message.message_id
+    )
+
 @User.on_message(filters.chat(GROUPS))
 async def delete(user, message):
     try:
