@@ -21,13 +21,6 @@ for usr in environ.get("ADMINS").split():
     
     
 
-User = Client(name="user-account",
-              session_string=SESSION,
-              api_id=API_ID,
-              api_hash=API_HASH,
-              workers=300
-              )
-Client.export_session_string()
 
 
 Bot = Client(name="auto-delete",
