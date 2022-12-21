@@ -10,7 +10,7 @@ NEEK = """<b>Group‌ message will be automatically deleted after 15 minutes due
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
-SESSION = environ.get("SESSION")
+#SESSION = environ.get("SESSION")
 TIME = int(environ.get("TIME"))
 GROUPS = []
 for grp in environ.get("GROUPS").split():
@@ -52,7 +52,7 @@ async def start(client, message):
         reply_to_message_id=message.message_id
     )
 
-@User.on_message(filters.chat(GROUPS))
+@Bot.on_message(filters.chat(GROUPS))
 async def delete(user, message):
     try:
        if message.from_user.id in ADMINS:
@@ -63,14 +63,14 @@ async def delete(user, message):
     except Exception as e:
        print(e)
        
-User.start()
-print("User Started!")
+#User.start()
+#print("User Started!")
 Bot.start()
 print("Bot Started!")
 
 idle()
 
-User.stop()
-print("User Stopped!")
+#User.stop()
+#print("User Stopped!")
 Bot.stop()
 print("Bot Stopped!")
