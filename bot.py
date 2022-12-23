@@ -28,8 +28,8 @@ for usr in environ.get("ADMINS").split():
 TimeZone = datetime.now(timezone("Asia/Kolkata"))
 Time = TimeZone.strftime("%H:%M:%S %p")
 Date = TimeZone.strftime("%d-%m-%-Y")
-now_utc = datetime.now(timezone('UTC'))
-Utc = now_utc.strftime("%Z%z")
+Now_utc = datetime.now(timezone('UTC'))
+Utc = Now_utc.strftime("%Z%z")
 Day = datetime.now(strftime("%A"))
 
 Bot = Client(name="auto-delete",
@@ -47,7 +47,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
 📅 Date : {Date}
 ⛅️ Day : {Day}
-🌇 UTC : {utc}
+🌇 UTC : {Utc}
 
 © CinimaBranthen
 """, show_alert=True)
