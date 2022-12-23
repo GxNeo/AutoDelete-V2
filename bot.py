@@ -1,6 +1,6 @@
 import asyncio
-from datetime import datetime, strftime
-from pytz import timezone
+from datetime import datetime as dt
+from pytz
 from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters, idle
@@ -24,13 +24,13 @@ ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
-    
-TimeZone = datetime.now(timezone("Asia/Kolkata"))
+now = dt.now()
+TimeZone = now(timezone("Asia/Kolkata"))
 Time = TimeZone.strftime("%H:%M:%S %p")
 Date = TimeZone.strftime("%d-%m-%-Y")
 Now_utc = datetime.now(timezone('UTC'))
 Utc = Now_utc.strftime("%Z%z")
-Day = datetime.now(strftime("%A"))
+Day = now.strftime("%A"))
 
 Bot = Client(name="auto-delete",
              api_id=API_ID,
