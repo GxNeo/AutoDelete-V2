@@ -47,10 +47,10 @@ async def start(client, message):
                     InlineKeyboardButton("About Me", callback_data="about_data")
                 ]
                 
-            ],
+            ]
         ),
-        reply_to_message_id=message.message_id
-    )
+        quote=True
+        )
 
 @Bot.on_message(filters.chat(GROUPS))
 async def delete(user, message):
