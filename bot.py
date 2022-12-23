@@ -39,7 +39,28 @@ Bot = Client(name="auto-delete",
              workers=300
              )
 
+@Bot.on_callback_query()
+async def cb_handler(client: Bot, query: CallbackQuery):
+    data = query.data
+    if data == "nekodate":
+        await query.answer(f"""👋🏻 Hello {query.from_user.mention}
+        
+📅 Date : {Date}
+⛅️ Day : {Day}
+🌇 UTC : {utc}
 
+© CinimaBranthen
+""", show_alert=True)
+    elif query.data == "nekotime":
+        await query.answer(f"""👋 Hello {query.from_user.mention}
+        
+⏰️ Time : {time}
+⚡️ TimeZone : {TimeZone}
+⌛️ Uptime : 
+
+© CinimaBranthen
+        """, show_alert=True)
+         
 @Bot.on_message(filters.command('start') & filters.private & filters.user(ADMINS))
 async def start(bot, message):
     await message.delete()
@@ -52,8 +73,8 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏰️ ᴛɪᴍᴇ", callback_data="fcuk"),
-                    InlineKeyboardButton("📆 ᴅᴀᴛᴇ", callback_data="about_data")
+                    InlineKeyboardButton("⏰️ ᴛɪᴍᴇ", callback_data="nekotime"),
+                    InlineKeyboardButton("📆 ᴅᴀᴛᴇ", callback_data="nekodate")
                 ]
                 
             ]
