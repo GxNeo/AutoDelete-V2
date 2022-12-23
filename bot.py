@@ -29,7 +29,7 @@ TimeZone = datetime.now(timezone("Asia/Kolkata"))
 Time = TimeZone.strftime("%H:%M:%S %p")
 Date = TimeZone.strftime("%d-%m-%-Y")
 now_utc = datetime.now(timezone('UTC'))
-utc = now_utc.strftime("%Z%z")
+Utc = now_utc.strftime("%Z%z")
 Day = datetime.now(strftime("%A"))
 
 Bot = Client(name="auto-delete",
