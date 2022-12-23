@@ -3,9 +3,12 @@ from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters, idle
 
-NEEK = """<b>Group‌ message will be automatically deleted after 15 minutes due to copyright issue.</b>
-    
-<b>⚜ Powered by @CinimaBranthen</b>"""
+NEEK = """
+<b>Group‌ message will be automatically deleted after 15 minutes due to copyright issue.</b>
+    
+   <b>⚜ Powered by @CinimaBranthen</b>
+   
+   """
 
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
