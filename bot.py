@@ -25,10 +25,12 @@ for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
     
-TimeZone = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
-Time = TimeZone.strftime("%I:%M %p")
-Date = TimeZone.strftime("%b %d")
-
+TimeZone = datetime.now(timezone("Asia/Kolkata"))
+Time = TimeZone.strftime("%H:%M:%S %p")
+Date = TimeZone.strftime("%d-%m-%-Y")
+now_utc = datetime.now(timezone('UTC'))
+utc = now_utc.strftime("%Z%z")
+Day = datetime.now(strftime("%A"))
 
 Bot = Client(name="auto-delete",
              api_id=API_ID,
