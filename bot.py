@@ -25,7 +25,7 @@ for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
 now = dt.now()
-TimeZone = now(timezone("Asia/Kolkata"))
+TimeZone = dt.now(pytz.timezone("Asia/Kolkata"))
 Time = TimeZone.strftime("%H:%M:%S %p")
 Date = TimeZone.strftime("%d-%m-%-Y")
 Now_utc = dt.now(timezone('UTC'))
