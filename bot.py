@@ -43,7 +43,7 @@ Bot = Client(name="auto-delete",
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "nekodate":
-        await query.answer(f"""👋🏻 Hello {query.from_user.mention}
+        await query.answer(f"""👋🏻 Hello {query.from_user.first_name}
         
 📅 Date : {Date}
 ⛅️ Day : {Day}
@@ -52,9 +52,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 © CinimaBranthen
 """, show_alert=True)
     elif query.data == "nekotime":
-        await query.answer(f"""👋 Hello {query.from_user.mention}
+        await query.answer(f"""👋 Hello {query.from_user.first_name}
         
-⏰️ Time : {time}
+⏰️ Time : {Time}
 ⚡️ TimeZone : {TimeZone}
 ⌛️ Uptime : 
 
