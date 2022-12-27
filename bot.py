@@ -55,7 +55,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         await query.answer(f"""👋 Hello {query.from_user.first_name}
         
 ⏰️ Time : {Time}
-⚡️ TimeZone : {TimeZone}
+⚡️ Zone : Asia/Kolkata
 ⌛️ Uptime : 
 
 © CinimaBranthen
