@@ -28,7 +28,7 @@ now = dt.now()
 TimeZone = dt.now(pytz.timezone("Asia/Kolkata"))
 Time = TimeZone.strftime("%H:%M:%S %p")
 Date = TimeZone.strftime("%d-%m-%-Y")
-Now_utc = dt.now(timezone('UTC'))
+Now_utc = dt.now(pytz.timezone('UTC'))
 Utc = Now_utc.strftime("%Z%z")
 Day = dt.now.strftime("%A")
 
