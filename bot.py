@@ -1,6 +1,6 @@
 import asyncio
 from datetime import datetime as dt
-from pytz
+import pytz
 from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram import Client, filters, idle
