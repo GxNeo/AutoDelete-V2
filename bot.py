@@ -1,5 +1,5 @@
 import asyncio
-from datetime import datetime as dt, date
+from datetime import datetime, date
 import pytz
 from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -23,10 +23,10 @@ for grp in environ.get("GROUPS").split():
 ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
-    
-now = dt.now(tz)
+
+tz = pytz.timezone("Asia/Kolkata")   
+now = datetime.now(tz)
 today = date.today()
-tz = pytz.timezone("Asia/Kolkata")
 tme = now.strftime("%H:%M:%S %p")
 date = tz.strftime("%d-%m-%-Y")
 day = now.strftime("%A")
