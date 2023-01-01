@@ -27,9 +27,9 @@ for usr in environ.get("ADMINS").split():
 now = dt.now(tz)
 today = date.today()
 tz = pytz.timezone("Asia/Kolkata")
-Time = now.strftime("%H:%M:%S %p")
-Date = tz.strftime("%d-%m-%-Y")
-Day = now.strftime("%A")
+tme = now.strftime("%H:%M:%S %p")
+date = tz.strftime("%d-%m-%-Y")
+day = now.strftime("%A")
 
 
 Bot = Client(name="auto-delete",
@@ -45,8 +45,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "nekodate":
         await query.answer(f"""👋🏻 Hello {query.from_user.first_name}
         
-📅 Date : {Date}
-⛅️ Day : {Day}
+📅 Date : {date}
+⛅️ Day : {day}
 🌇 UTC : +0530
 
 © CinimaBranthen
@@ -54,7 +54,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     elif query.data == "nekotime":
         await query.answer(f"""👋 Hello {query.from_user.first_name}
         
-⏰️ Time : {Time}
+⏰️ Time : {tme}
 ⚡️ Zone : Asia/Kolkata
 ⌛️ Uptime : {today}
 
