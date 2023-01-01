@@ -1,5 +1,5 @@
 import asyncio
-from datetime import datetime as dt
+from datetime import datetime as dt, date
 import pytz
 from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -24,13 +24,13 @@ ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
-now = dt.now()
+now = dt.now(Tz)
+today = date.today()
 Tz = pytz.timezone("Asia/Kolkata")
-Time = Tz.strftime("%H:%M:%S %p")
+Time = now.strftime("%H:%M:%S %p")
 Date = Tz.strftime("%d-%m-%-Y")
-Now_utc = dt.now(pytz.timezone('UTC'))
-Utc = Now_utc.strftime("%Z%z")
 Day = now.strftime("%A")
+
 
 Bot = Client(name="auto-delete",
              api_id=API_ID,
@@ -56,7 +56,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
 ⏰️ Time : {Time}
 ⚡️ Zone : Asia/Kolkata
-⌛️ Uptime : 
+⌛️ Uptime : {today}
 
 © CinimaBranthen
         """, show_alert=True)
