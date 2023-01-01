@@ -24,11 +24,11 @@ ADMINS = []
 for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
-now = dt.now(Tz)
+now = dt.now(tz)
 today = date.today()
-Tz = pytz.timezone("Asia/Kolkata")
+tz = pytz.timezone("Asia/Kolkata")
 Time = now.strftime("%H:%M:%S %p")
-Date = Tz.strftime("%d-%m-%-Y")
+Date = tz.strftime("%d-%m-%-Y")
 Day = now.strftime("%A")
 
 
