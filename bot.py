@@ -12,7 +12,9 @@ NEEK = """
 <i><b>⚜ Powered by @CinimaBranthen</b></i>
    
    """
-
+#######
+BOT_START_TIME = time.time()
+########
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
 BOT_TOKEN = environ.get("BOT_TOKEN")
@@ -27,8 +29,8 @@ for usr in environ.get("ADMINS").split():
 
 tz = pytz.timezone("Asia/Kolkata")   
 now = datetime.now(tz)
-teek = time.time()
-uptime = time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - {teek}))
+#teek = time.time()
+uptime = time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - BOT_START_TIME))
 tme = now.strftime("%H:%M:%S %p")
 date = now.strftime("%d-%m-%-Y")
 day = now.strftime("%A")
