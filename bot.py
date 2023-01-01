@@ -57,7 +57,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
 ⏰️ Time : {tme}
 ⚡️ Zone : Asia/Kolkata
-⌛️ Uptime : {today}
+⌛️ Uptime : Never
 
 © CinimaBranthen
         """, show_alert=True)
