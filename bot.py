@@ -30,7 +30,7 @@ for usr in environ.get("ADMINS").split():
 tz = pytz.timezone("Asia/Kolkata")   
 now = datetime.now(tz)
 #teek = time.time()
-uptime = time.strftime("%W Week | %d Day | %H hour| %M Min | %S Sec", time.gmtime(time.time() - BOT_START_TIME))
+uptime = time.strftime("%W Week | %d Day | %H hour | %M Min | %S Sec", time.gmtime(time.time() - BOT_START_TIME))
 tme = now.strftime("%H:%M:%S %p")
 date = now.strftime("%d-%m-%-Y")
 day = now.strftime("%A")
