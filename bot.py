@@ -25,9 +25,9 @@ for usr in environ.get("ADMINS").split():
     ADMINS.append(int(usr))
     
 now = dt.now()
-TimeZone = dt.now(pytz.timezone("Asia/Kolkata"))
-Time = TimeZone.strftime("%H:%M:%S %p")
-Date = TimeZone.strftime("%d-%m-%-Y")
+Tz = pytz.timezone("Asia/Kolkata")
+Time = Tz.strftime("%H:%M:%S %p")
+Date = Tz.strftime("%d-%m-%-Y")
 Now_utc = dt.now(pytz.timezone('UTC'))
 Utc = Now_utc.strftime("%Z%z")
 Day = now.strftime("%A")
@@ -47,7 +47,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
 📅 Date : {Date}
 ⛅️ Day : {Day}
-🌇 UTC : {Utc}
+🌇 UTC : +0530
 
 © CinimaBranthen
 """, show_alert=True)
