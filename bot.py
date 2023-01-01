@@ -27,7 +27,8 @@ for usr in environ.get("ADMINS").split():
 
 tz = pytz.timezone("Asia/Kolkata")   
 now = datetime.now(tz)
-today = time.time()
+teek = time.time()
+uptime = time.strftime("%Hh %Mm %Ss", time.gmtime(time.time() - {teek}))
 tme = now.strftime("%H:%M:%S %p")
 date = now.strftime("%d-%m-%-Y")
 day = now.strftime("%A")
@@ -57,7 +58,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         
 ⏰️ Time : {tme}
 ⚡️ Zone : Asia/Kolkata
-⌛️ Uptime : Never
+⌛️ Uptime : {uptime}
 
 © CinimaBranthen
         """, show_alert=True)
