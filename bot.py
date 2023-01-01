@@ -2,6 +2,7 @@ import asyncio
 from datetime import datetime, date
 import pytz
 import time
+import pandas as pd
 from os import environ
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, idle
@@ -29,10 +30,11 @@ for usr in environ.get("ADMINS").split():
 
 tz = pytz.timezone("Asia/Kolkata")   
 now = datetime.now(tz)
+fcuk = datatime.month_name(locale = 'English')
 #teek = time.time()
 uptime = time.strftime("%W Week | %d Day | %H hour | %M Min | %S Sec", time.gmtime(time.time() - BOT_START_TIME))
 tme = now.strftime("%H:%M:%S %p")
-date = now.strftime("%d-%m-%-Y")
+date = now.strftime(f"%d-{fcuk}-%-Y")
 day = now.strftime("%A")
 
 
