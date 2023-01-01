@@ -28,7 +28,7 @@ tz = pytz.timezone("Asia/Kolkata")
 now = datetime.now(tz)
 today = date.today()
 tme = now.strftime("%H:%M:%S %p")
-date = tz.strftime("%d-%m-%-Y")
+date = now.strftime("%d-%m-%-Y")
 day = now.strftime("%A")
 
 
