@@ -39,7 +39,7 @@ date = now.strftime("%d-%M-%-Y")
 day = now.strftime("%A")
 
 
-User = Client(session_name=SESSION,
+User = Client(session_name="SESSION",
               api_id=API_ID,
               api_hash=API_HASH,
               workers=300
