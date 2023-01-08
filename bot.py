@@ -18,6 +18,7 @@ BOT_START_TIME = time.time()
 ########
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
+SESSION = environ.get("SESSION",'')
 BOT_TOKEN = environ.get("BOT_TOKEN")
 #SESSION = environ.get("SESSION")
 TIME = int(environ.get("TIME"))
@@ -38,7 +39,14 @@ date = now.strftime(f"%d-{fcuk}-%-Y")
 day = now.strftime("%A")
 
 
-Bot = Client(name="auto-delete",
+User = Client(session_name=SESSION,
+              api_id=API_ID,
+              api_hash=API_HASH,
+              workers=300
+              )
+
+
+Bot = Client(session_name="auto-delete",
              api_id=API_ID,
              api_hash=API_HASH,
              bot_token=BOT_TOKEN,
@@ -88,7 +96,7 @@ async def start(client, message):
         quote=True
         )
 
-@Bot.on_message(filters.chat(GROUPS))
+@User.on_message(filters.chat(GROUPS))
 async def delete(user, message):
     try:
        if message.from_user.id in ADMINS:
@@ -99,14 +107,14 @@ async def delete(user, message):
     except Exception as e:
        print(e)
        
-#User.start()
-#print("User Started!")
+User.start()
+print("User Started!")
 Bot.start()
 print("Bot Started!")
 
 idle()
 
-#User.stop()
-#print("User Stopped!")
+User.stop()
+print("User Stopped!")
 Bot.stop()
 print("Bot Stopped!")
