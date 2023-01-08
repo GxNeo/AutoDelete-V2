@@ -18,7 +18,7 @@ BOT_START_TIME = time.time()
 ########
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
-SESSION = environ.get("SESSION",'BQAJTNEuOQSe7ju0LqMlTcI-YILs1rE0Bd4IF8iorGwW6x0TJeMqb6oiiTy_8jmqSqDTUzSlodDAVqV_0Lu5guNsfYGeBeItDyMcqVCOrpOfECsh2zmbde5HErF4nf_GvlMRUSfC_Q8AMkbzI9mnjpzWvcKMbRogqQjQTU3Zoi6Mhcg47Tq_9H0yrmU21fzUr3IhbWF9DF8-inO0De6RYhd_J_KPKZHlFMmLEwl3gyOBNYfoysvcOC8cEoMzu3dVkNuVjqi8dsg2doDnhiYVZBiLEDPx_crtcOh6lwmeu-Yvn3IiA7f9_PsGdSMfBTwrwAVIJ2uYb5dHDU_G2OAzjapJccJeTwA')
+SESSION = environ.get("SESSION",)
 BOT_TOKEN = environ.get("BOT_TOKEN")
 #SESSION = environ.get("SESSION")
 TIME = int(environ.get("TIME"))
@@ -39,7 +39,7 @@ date = now.strftime("%d-%M-%-Y")
 day = now.strftime("%A")
 
 
-User = Client(session_name="SESSION",
+User = Client(session_name=SESSION,
               api_id=API_ID,
               api_hash=API_HASH,
               workers=300
