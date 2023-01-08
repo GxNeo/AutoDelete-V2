@@ -18,7 +18,7 @@ BOT_START_TIME = time.time()
 ########
 API_ID = int(environ.get("API_ID"))
 API_HASH = environ.get("API_HASH")
-SESSION = environ.get("SESSION",'')
+SESSION = environ.get("SESSION",'BQAJTNEuOQSe7ju0LqMlTcI-YILs1rE0Bd4IF8iorGwW6x0TJeMqb6oiiTy_8jmqSqDTUzSlodDAVqV_0Lu5guNsfYGeBeItDyMcqVCOrpOfECsh2zmbde5HErF4nf_GvlMRUSfC_Q8AMkbzI9mnjpzWvcKMbRogqQjQTU3Zoi6Mhcg47Tq_9H0yrmU21fzUr3IhbWF9DF8-inO0De6RYhd_J_KPKZHlFMmLEwl3gyOBNYfoysvcOC8cEoMzu3dVkNuVjqi8dsg2doDnhiYVZBiLEDPx_crtcOh6lwmeu-Yvn3IiA7f9_PsGdSMfBTwrwAVIJ2uYb5dHDU_G2OAzjapJccJeTwA')
 BOT_TOKEN = environ.get("BOT_TOKEN")
 #SESSION = environ.get("SESSION")
 TIME = int(environ.get("TIME"))
@@ -31,7 +31,7 @@ for usr in environ.get("ADMINS").split():
 
 tz = pytz.timezone("Asia/Kolkata")   
 now = datetime.now(tz)
-fcuk = datetime.month_name(locale = 'English')
+#fcuk = datetime.month_name(locale = 'English')
 #teek = time.time()
 uptime = time.strftime("%W Week | %d Day | %H hour | %M Min | %S Sec", time.gmtime(time.time() - BOT_START_TIME))
 tme = now.strftime("%H:%M:%S %p")
