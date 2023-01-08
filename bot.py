@@ -35,7 +35,7 @@ now = datetime.now(tz)
 #teek = time.time()
 uptime = time.strftime("%W Week | %d Day | %H hour | %M Min | %S Sec", time.gmtime(time.time() - BOT_START_TIME))
 tme = now.strftime("%H:%M:%S %p")
-date = now.strftime(f"%d-{fcuk}-%-Y")
+date = now.strftime("%d-%M-%-Y")
 day = now.strftime("%A")
 
 
